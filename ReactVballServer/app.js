@@ -19,6 +19,7 @@ var sequelize = require('./db.js')
 // // **********DANGER************DANGER************DANGER******** 
 // // **********DANGER************DANGER************DANGER********
 
+
 sequelize.sync();
 // sequelize.sync({ force: true})
 

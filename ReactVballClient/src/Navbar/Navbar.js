@@ -35,7 +35,7 @@ class SiteBar extends React.Component {
             <div>
                 <Navbar className='navbar' color="faded"  light expand="md">
                     <NavbarBrand className ='navheader' href="/"><h1><strong>Welcome To Indy V Ballers</strong></h1></NavbarBrand>
-                    <NavbarToggler onClick={this.props.loggout} />
+                    <NavbarToggler onClick={this.props.logout} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>

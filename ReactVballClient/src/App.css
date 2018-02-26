@@ -26,12 +26,6 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.main {
-  background-color: wheat;
-  color: black;
-  height: 100%;
-  min-height: 100%; 
-}
 .messageBoard {
   padding-top: 15px;
   width: 25%;
@@ -40,6 +34,13 @@
   border: 5px solid orangered;
   color: white; 
 }
+.main {
+  background-color: wheat;
+  color: black;
+  height: 100%;
+  min-height: 100%; 
+}
+
 .mainDiv {
   margin: auto;
   width: 90%;

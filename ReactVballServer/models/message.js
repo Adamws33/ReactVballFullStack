@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
 		owner: DataTypes.INTEGER,
 		type: DataTypes.STRING,
 		comment: DataTypes.STRING,
-		partner: DataTypes.INTEGER,
+		partner: DataTypes.STRING,
 		division: DataTypes.STRING
   })
 }
