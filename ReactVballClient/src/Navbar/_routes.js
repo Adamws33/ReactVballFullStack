@@ -6,7 +6,7 @@ import Message from '../Message/Message'
 
 export const routes = [
     {
-      path: "/"||'/home',
+      path: '/home',
       exact: true,
       main: () => <Home />
     },

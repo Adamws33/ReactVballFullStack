@@ -7,7 +7,8 @@ class Signup extends Component {
         this.state = {
             username: '',
             password: '',
-            isEmpty: true
+            isEmpty: true,
+            userId: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,8 +37,10 @@ class Signup extends Component {
             console.log(res)
             }
         ).then((data) => {
+            console.log("data signup",data)
+            window.localStorage.setItem("userId", data.user.id)
             this.props.setToken(data.sessionToken)
-
+            console.log("owner/user",data.user.id)
         }) 
         event.preventDefault()
     }

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import { Link } from 'react-router-dom'
 
 // this works with the current workout log server, if there server is on a differnt port, they need to change the respective lines for fetch
 
@@ -11,7 +10,8 @@ class Login extends Component {
         this.state = {
             username: '',
             password: '',
-            logIn: false
+            logIn: false,
+            userId: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,8 +42,10 @@ class Login extends Component {
                 }}
                 
         ).then((data) => {
-            console.log("data",data)
+            console.log("data login",data)
+            window.localStorage.setItem("userId", data.user.id)
             this.props.setToken(data.sessionToken)
+            console.log("owner/user",data.user.id)
 
         }) 
         event.preventDefault()
@@ -53,6 +55,7 @@ class Login extends Component {
         return (
 
             <div>
+                {console.log("login state", this.state)}
                 <h1>Login</h1>
                 <h6>Please enter your e-mail and password to log in.  </h6>
                 <Form onSubmit={this.handleSubmit} >

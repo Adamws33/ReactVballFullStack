@@ -14,6 +14,7 @@ class Events extends Component {
         showResultsJuly: false,
         showResultsAug: false,
         showResultsSep: false,
+        owner: window.localStorage.getItem("userId")
       };
 
       this.registerClickApril = this.registerClickApril.bind(this);
@@ -67,14 +68,15 @@ registerCancel(){
 }
   render() {
     return (
+      
       <Container className='main'>
+      {console.log("events this.state.userId", this.state.userId)}
               <h1 className="text-center">Upcoming Events For 2018</h1><hr/>
               <h3 className="text-center lead"><strong>Below are the upcoming scheduled Indy V Baller events.  Check back regularly as new dates will be added regularly</strong></h3>
               <h2 className="text-center">April</h2>
               <hr/>
               <p className="text-center"><strong >April 1st  </strong><Button size="sm" onClick={this.registerClickApril}>Register </Button>
               <strong>  April 20th  </strong><Button size="sm" onClick={this.registerClickApril}>Register </Button> </p>
-              {console.log("this", this)}
               {this.state.showResultsApril ? <Register />: null}
               {this.state.showResultsApril ? (<Button onClick={this.registerCancel}>Back</Button>) : null}
               <hr/>

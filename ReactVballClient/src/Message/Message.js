@@ -8,6 +8,7 @@ class Message extends Component {
     super(props);
     this.state = {
       partner: false,
+      owner: window.localStorage.getItem("userId"),
     }
     this.partner = this.partner.bind(this);
   }
@@ -27,6 +28,7 @@ class Message extends Component {
     return (
 
         <div className="main">
+        {console.log("message this.state.userId", this.state.userId)}
           <div className="mainDiv">
             <h1 className="text-center">Post A Message</h1><hr/>
             <div className="dropdown label">
@@ -38,9 +40,7 @@ class Message extends Component {
             </div>
             {this.state.partner ? <Messages />: <Text />}
           </div>
-          <div className="container recentPosts text-center">
-            <h2>Your Recent Posts</h2>
-          </div>
+
         </div>
 
     );

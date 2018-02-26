@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Auth from './auth/Auth';
 import SiteBar from './Navbar/Navbar';
-import Splash from './home/Splash';
 import SideBar from './Sidebar/SideBar';
-import Home from './home/Home';
+import Splash from './home/Splash';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -48,7 +47,7 @@ class App extends Component {
     if (this.state.sessionToken === localStorage.getItem('token')) {
       return (
         <Route path='/' exact={true}>
-          <Home sessionToken={this.state.sessionToken} />
+          <Splash sessionToken={this.state.sessionToken} />
         </Route>
       )
     } else {

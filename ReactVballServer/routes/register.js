@@ -12,7 +12,7 @@ router.post('/', function(req, res) {
 
   // Use our sequelize model to create log
   Register.create({ 
-      owner: req.params.id,
+      owner: req.body.register.owner,
       date: req.body.register.date,
       captain: req.body.register.captain,
       partner: req.body.register.partner,

@@ -6,6 +6,7 @@ import Login from './Login';
 
 const Auth = (props) => {
     return (
+        
         <Container className="auth-container">
             <Row>
                 <Col md="6">

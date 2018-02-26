@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-const currentdate = new Date();
 
 
 class Register extends Component {
@@ -11,7 +10,8 @@ class Register extends Component {
       partner: " ",
       phone: " ",
       email: " ",
-      division: " "
+      division: " ",
+      owner: window.localStorage.getItem("userId")
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -33,8 +33,8 @@ class Register extends Component {
             }).then(
             (response) => response.json(),
             document.getElementById("formRegister").reset(),
-            (res)=>{
-            console.log("After Post Register",res)
+            (response)=>{
+            console.log("After Post Register",response)
             
             });
             e.preventDefault()
@@ -44,6 +44,7 @@ class Register extends Component {
     return (
 
         <div className="register">
+        {console.log("Register this.state.userId", this.state.userId)}
           <form id="formRegister">
             <h1>Register Here</h1>
             <input placeholder="Captian Name" name="captain" type="text" onChange={this.handleChange}/>
